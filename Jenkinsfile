@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                 sh 'cd FinanceAPI ' 
+                 sh  'ls' 
                  sh 'docker-compose up'
             }
         }
