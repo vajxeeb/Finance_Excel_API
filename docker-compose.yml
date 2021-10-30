@@ -1,0 +1,51 @@
+version: "3.7"
+
+# services:
+#   docs:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#       target: dev
+#     ports:
+#       - 5000:5000
+#     volumes:
+#       - ./:/app
+
+services:
+  finance_api:
+    container_name: finance_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5000:8000
+    environment:
+      - NODE_ENV=development
+
+
+
+
+# version: "3.3"
+
+# services:
+#   docs:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#       target: dev
+#     ports:
+#       - 3000:3000
+#     volumes:
+#       - ./:/app
+#       - 'app/node_modules'
+#     depends_on:
+#       - mysql_server
+ 
+#     mysql_server:
+#       image: mysql:8.0
+#       environment:
+#         - MYSQL_DATADASE=db_finance
+#         - MYSQL_USER=root
+#         - MYSQL_PASSWORD=vaxeng12345
+#         - MYSQL_ROOT_PASSWORD=vaxeng12345
+    
