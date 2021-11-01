@@ -1,11 +1,12 @@
-node {
-    checkout scm
-
-    docker.withRegistry('bestech.la:5001', 'Jenkins-Docker') {
-
-        def customImage = docker.build("hello-world:${env.BUILD_ID}")
-
-        /* Push the container to the custom Registry */
-        customImage.push()
+pipeline {
+    agent any;
+    stages {
+        stage('build') {
+            steps {
+                 sh 'docker image ls'
+                 docker 'push 49.0.198.122:5001/hello-world'
+                 
+             }
+        }
     }
 }
